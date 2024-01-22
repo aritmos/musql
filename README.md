@@ -32,7 +32,6 @@ SELECT
 FROM employee
 WHERE salary > 50000
 ORDER BY ranking
-$
 ```
 
 ```bash
@@ -45,7 +44,6 @@ SELECT
   grain.price_per_pound * box_size.box_weight
 FROM product
 CROSS JOIN box_sizes
-$
 ```
 
 ```bash
