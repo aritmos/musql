@@ -35,6 +35,7 @@ WHERE salary > 50000
 ORDER BY ranking
 ```
 
+---
 
 ```
 {product⊗box_sizes}⊕{grain.price_per_pound*box_size.box_weight}
@@ -49,6 +50,7 @@ FROM product
 CROSS JOIN box_sizes
 ```
 
+---
 
 ```
 employee↾{⋄salary}→{*}"
