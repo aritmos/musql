@@ -20,9 +20,10 @@ Besides operator remapping I will iteratively add any modifications to the langu
 
 Here are experimental examples of the syntax:
 
-```bash
-$ query="employee↾{salary>50000}⊕{ranking:☇⇌{↧salary}}→{employee_id,last_name,salary,ranking}"
-$ musql -i $query
+```
+employee↾{salary>50000}⊕{ranking:☇⇌{↧salary}}→{employee_id,last_name,salary,ranking}
+```
+```sql
 SELECT 
     employee_id,
     last_name,
@@ -34,10 +35,12 @@ WHERE salary > 50000
 ORDER BY ranking
 ```
 
-```bash
-$ query="{product⊗box_sizes}⊕{grain.price_per_pound*box_size.box_weight}
-            →{grain.product_name,box_size.description,§1}"
-$ musql -i $query
+
+```
+{product⊗box_sizes}⊕{grain.price_per_pound*box_size.box_weight}
+            →{grain.product_name,box_size.description,§1}
+```
+```sql
 SELECT
   grain.product_name,
   box_size.description,
@@ -46,9 +49,11 @@ FROM product
 CROSS JOIN box_sizes
 ```
 
-```bash
-$ query="employee↾{⋄salary}→{*}"
-$ musql -i $query
+
+```
+employee↾{⋄salary}→{*}"
+```
+```sql
 SELECT *
 FROM employee 
 WHERE salary > ( SELECT AVG(salary) FROM employee )
