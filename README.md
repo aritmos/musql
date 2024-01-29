@@ -53,7 +53,7 @@ CROSS JOIN box_sizes
 ---
 
 ```
-employee↾{⋄salary}→{*}"
+employee↾{⋄salary}→{*}
 ```
 ```sql
 SELECT *
